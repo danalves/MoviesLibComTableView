@@ -16,6 +16,20 @@ struct Movie: Codable {
     let summary: String
     let imageName: String
     
+    var imageSmall: String {
+        return imageName + "-small.jpg"
+    }
+    
+    var imageWide: String {
+        return imageName + "-wide.jpg"
+    }
+    //Drama | Ação | Terror
+    var categoriesDescription: String {
+        
+        return categories.joined(separator: " | ")
+        
+    }
+    
     enum CodingKeys: String, CodingKey {
         case title
         case categories
